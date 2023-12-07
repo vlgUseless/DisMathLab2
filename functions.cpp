@@ -58,22 +58,8 @@ void PrintSDNFf(Table* table)
 		{
 			cout << table->SDNFf[i];
 		}
-
 	}
 
-	cout << endl;
-	for (int i = 0; i < table->boolSDNFf.size(); i++)
-	{
-		if (i != table->boolSDNFf.size() - 1)
-		{
-			cout << table->boolSDNFf[i] << " V ";
-		}
-		else
-		{
-			cout << table->boolSDNFf[i];
-		}
-
-	}
 	cout << endl;
 }
 
@@ -140,16 +126,17 @@ void PrintSKNFf(Table* table)
 {
 	for (int i = 0; i < table->SKNFf.size(); i++)
 	{
+		cout << "(";
 		if (i != table->SKNFf.size() - 1)
 		{
-			cout << table->SKNFf[i] << " /\\ ";
+			cout << table->SKNFf[i] << ") /\\ ";
 		}
 		else
 		{
 			cout << table->SKNFf[i];
 		}
-
 	}
+	cout << ")";
 	cout << endl;
 }
 
@@ -448,7 +435,6 @@ int FindBDR(Table* table, string elem) {
 			if (!flag) {
 				continue;
 			}
-
 			if (flag) {
 				return item.second;
 			}
